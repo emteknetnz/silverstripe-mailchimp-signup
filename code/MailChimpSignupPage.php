@@ -257,6 +257,9 @@ class MailChimpSignupPage_Controller extends Page_Controller {
             $form = $form->enableSpamProtection();
         }
 
+        // Re-initiate the from error set up with the new HTMLID and Spam Protection field (if applies).
+        $form->setupFormErrors();
+
         return $form;
     }
  
